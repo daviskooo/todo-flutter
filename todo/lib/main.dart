@@ -20,9 +20,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(), // Utilizando uma barra de navegação no app (visual).
+      appBar: AppBar(
+        leading: Text("#"),
+        title: Text("Lista de Tarefas"),
+        actions: <Widget>[
+          Icon(Icons.add),
+        ],
+      ), // Utilizando uma barra de navegação no app (visual).
       body: Container(
-        child: Text("Olá mundo"),
+        child: Center(
+          child: Text("Olá mundo"),
+        ),
       ),
     );
   }
