@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'models/item.dart';
+
 void main() => runApp(App());
 
 class App extends StatelessWidget {
@@ -22,6 +24,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var items = new List<Item>();
+
+  HomePage() {
+    items = [];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
