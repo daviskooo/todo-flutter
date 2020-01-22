@@ -5,8 +5,9 @@ void main() => runApp(App());
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     return MaterialApp(
+    return MaterialApp(
       title: 'Todo App',
+      debugShowCheckedModeBanner: false, // Retirando selo de debug na build.
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
@@ -18,8 +19,11 @@ class App extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      appBar: AppBar(), // Utilizando uma barra de navegação no app (visual).
+      body: Container(
+        child: Text("Olá mundo"),
+      ),
     );
   }
 }
