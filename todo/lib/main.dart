@@ -37,11 +37,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Text("#"),
         title: Text("Lista de Tarefas"),
-        actions: <Widget>[
-          Icon(Icons.add),
-        ],
       ), // Utilizando uma barra de navegação no app (visual).
       body: Container(
         child: Center(
