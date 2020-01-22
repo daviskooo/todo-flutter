@@ -28,6 +28,9 @@ class _HomePageState extends State<HomePage> {
 
   HomePage() {
     items = [];
+    items.add(Item(title: "Item 1", done: true));
+    items.add(Item(title: "Item 2", done: false));
+    items.add(Item(title: "Item 3", done: true));
   }
 
   @override
