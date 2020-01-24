@@ -92,6 +92,11 @@ class _HomePageState extends State<HomePage> {
                 color: Colors
                     .red), // Adicionando a cor vermelha para o indicador do container do item.
             key: Key(item.title),
+            onDismissed: (direction) {
+              print(
+                  direction); // Mostrar a direção (no terminal) para qual o deslize foi feito.
+              //remove(index);
+            },
           );
         },
       ),
