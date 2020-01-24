@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
           final item = widget.items[index];
           return CheckboxListTile(
             title: Text(item.title),
-            activeColor: Colors.green, // Cor do CheckBox quando está ativo.
+            activeColor: Colors.black54, // Cor do CheckBox quando está ativo.
             key: Key(item.title),
             value: item.done,
             onChanged: (value) {
