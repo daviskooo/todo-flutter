@@ -76,17 +76,22 @@ class _HomePageState extends State<HomePage> {
         itemCount: widget.items.length,
         itemBuilder: (BuildContext context, int index) {
           final item = widget.items[index];
-          return CheckboxListTile(
-            title: Text(item.title),
-            activeColor: Colors.black54, // Cor do CheckBox quando está ativo.
+          return Dismissible(
+            child: CheckboxListTile(
+              title: Text(item.title),
+              activeColor: Colors.black54, // Cor do CheckBox quando está ativo.
+              value: item.done,
+              onChanged: (value) {
+                setState(() {
+                  item.done = value;
+                });
+                print(value);
+              },
+            ),
+            background: Container(
+                color: Colors
+                    .red), // Adicionando a cor vermelha para o indicador do container do item.
             key: Key(item.title),
-            value: item.done,
-            onChanged: (value) {
-              setState(() {
-                item.done = value;
-              });
-              print(value);
-            },
           );
         },
       ),
