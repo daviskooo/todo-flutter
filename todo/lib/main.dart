@@ -50,6 +50,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void remove(int index) {
+    setState(() {
+      widget.items.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +101,7 @@ class _HomePageState extends State<HomePage> {
             onDismissed: (direction) {
               print(
                   direction); // Mostrar a direção (no terminal) para qual o deslize foi feito.
-              //remove(index);
+              remove(index);
             },
           );
         },
