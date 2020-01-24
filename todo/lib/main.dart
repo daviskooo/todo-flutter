@@ -37,7 +37,21 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Lista de Tarefas"),
+        title: TextFormField(
+          keyboardType: TextInputType.text, // Tipo de teclado de digitação.
+          style: TextStyle(
+            color:
+                Colors.white, // Adicionando a cor branca para o texto do campo.
+            fontSize: 20,
+          ),
+          decoration: InputDecoration(
+            // Adicionando estilização no campo de texto.
+            labelText: "Digite uma nova tarefa",
+            labelStyle: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
       ), // Utilizando uma barra de navegação no app (visual).
       body: ListView.builder(
         itemCount: widget.items.length,
@@ -45,7 +59,7 @@ class _HomePageState extends State<HomePage> {
           final item = widget.items[index];
           return CheckboxListTile(
             title: Text(item.title),
-            activeColor: Colors.green,
+            activeColor: Colors.green, // Cor do CheckBox quando está ativo.
             key: Key(item.title),
             value: item.done,
             onChanged: (value) {
