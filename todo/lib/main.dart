@@ -39,6 +39,9 @@ class _HomePageState extends State<HomePage> {
   // Essa função, irá adicionar um novo item, setando o seu estado como o valor obtido no campo de texto, e por padrão deixá-lo não checado (falso).
   // O valor do título é pego pela variável declarada como controladora no campo de texto, obtendo pela manipulação, o valor de texto do campo.
   void add() {
+    if (newTaskCtrl.text.isEmpty)
+      return; // Caso o campo de texto seja vazio, retorne, assim a função não é executada e nenhum valor sem texto é adicionado.
+
     setState(() {
       widget.items.add(Item(
         title: newTaskCtrl.text,
