@@ -36,6 +36,17 @@ class _HomePageState extends State<HomePage> {
   var newTaskCtrl =
       TextEditingController(); // Declarando uma variável para ser uma controladora de edição de texto (no caso de um campo).
 
+  // Essa função, irá adicionar um novo item, setando o seu estado como o valor obtido no campo de texto, e por padrão deixá-lo não checado (falso).
+  // O valor do título é pego pela variável declarada como controladora no campo de texto, obtendo pela manipulação, o valor de texto do campo.
+  void add() {
+    setState(() {
+      widget.items.add(Item(
+        title: newTaskCtrl.text,
+        done: false,
+      ));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +88,7 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: add,
         child: Icon(Icons.add),
         backgroundColor: Colors.grey,
       ),
