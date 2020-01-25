@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
         title: newTaskCtrl.text,
         done: false,
       ));
+      newTaskCtrl.clear();
     });
   }
 
