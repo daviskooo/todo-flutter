@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'models/item.dart';
@@ -59,6 +61,10 @@ class _HomePageState extends State<HomePage> {
   Future load() async {
     var prefs = await SharedPreferences.getInstance();
     var data = prefs.getString('data');
+
+    if (data != null) {
+      Iterable decoded = jsonDecode(data);
+    }
   }
 
   @override
