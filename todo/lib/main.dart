@@ -116,6 +116,7 @@ class _HomePageState extends State<HomePage> {
               onChanged: (value) {
                 setState(() {
                   item.done = value;
+                  save();
                 });
                 print(value);
               },
