@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'models/item.dart';
@@ -64,6 +63,7 @@ class _HomePageState extends State<HomePage> {
 
     if (data != null) {
       Iterable decoded = jsonDecode(data);
+      List<Item> result = decoded.map((x) => Item.fromJson(x)).toList();
     }
   }
 
