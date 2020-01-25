@@ -74,6 +74,11 @@ class _HomePageState extends State<HomePage> {
     load();
   }
 
+  save() async {
+    var prefs = await SharedPreferences.getInstance();
+    await prefs.setString('data', jsonEncode(widget.items));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
