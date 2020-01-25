@@ -70,6 +70,10 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  _HomePageState() {
+    load();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
