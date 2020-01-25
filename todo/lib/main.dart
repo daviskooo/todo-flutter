@@ -56,6 +56,7 @@ class _HomePageState extends State<HomePage> {
   void remove(int index) {
     setState(() {
       widget.items.removeAt(index);
+      save();
     });
   }
 
